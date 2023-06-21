@@ -20,7 +20,7 @@ export default function Signin(props) {
 
                 <Form.Group>
                     <Form.Label>Email Address</Form.Label>
-                    <Form.Control name='emailAddress' onChange={ChangeHandler} />
+                    <Form.Control name='email' onChange={ChangeHandler} />
                 </Form.Group>
 
 

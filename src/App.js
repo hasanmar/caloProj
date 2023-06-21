@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Home from "./Home";
-
 
 
 export default function App() {
@@ -34,7 +32,7 @@ export default function App() {
   }, [])
 
   const registerHandler = (user) => {
-    Axios.post("auth/signup", user)
+    Axios.post("http://localhost:8080/g/signup", user)
       .then(res => {
         console.log(res)
       })
@@ -44,7 +42,7 @@ export default function App() {
   }
 
   const loginHandler = (cred) => {
-    Axios.post("auth/signin", cred)
+    Axios.post("http://localhost:8080/g/login", cred)
       .then(res => {
         console.log(res.data.token)
         // save the token into local storage
@@ -97,10 +95,9 @@ export default function App() {
         </div>
         <div>
           <Routes>
-
-            {/* <Route path="/" element={<Home />}></Route> */}
+    
             <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
-            <Route path="/signin" element={<Signin register={loginHandler} />}></Route>
+            <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
           </Routes>
         </div>
       </Router>

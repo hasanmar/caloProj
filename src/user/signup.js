@@ -33,7 +33,7 @@ export default function Signup(props) {
 
                 <Form.Group>
                     <Form.Label>Account type</Form.Label>
-                    <Form.Select aria-label="account type" onChange={ChangeHandler} name="role  ">
+                    <Form.Select aria-label="account type" onChange={ChangeHandler} name="role">
                         <option value="seeker">Job seeker</option>
                         <option value="employer">Employer</option>
                     </Form.Select>
